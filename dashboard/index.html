@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TDD 進捗ダッシュボード — 商品在庫管理システム</title>
+    <style>
+      :root {
+        --pass: #2e7d32;
+        --fail: #c62828;
+        --skip: #f9a825;
+        --notrun: #bdbdbd;
+        --bg: #f5f6f8;
+      }
+      * { box-sizing: border-box; }
+      body {
+        font-family: system-ui, "Segoe UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+        margin: 0;
+        background: var(--bg);
+        color: #222;
+      }
+      header { padding: 20px 24px; background: #1f2937; color: #fff; }
+      header h1 { margin: 0; font-size: 20px; }
+      header .meta { font-size: 12px; opacity: 0.8; margin-top: 4px; }
+      main { padding: 20px 24px; max-width: 1100px; margin: 0 auto; }
+      .summary { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+      .card {
+        background: #fff; border-radius: 8px; padding: 12px 18px; min-width: 110px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      .card .label { font-size: 12px; color: #666; }
+      .card .value { font-size: 26px; font-weight: 700; }
+      .progress { height: 8px; border-radius: 4px; background: #e0e0e0; overflow: hidden; display: flex; }
+      .progress > span { display: block; height: 100%; }
+      table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+      th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; vertical-align: middle; }
+      th { background: #fafafa; font-size: 12px; color: #555; }
+      .feature-id { font-weight: 700; }
+      .counts span { display: inline-block; min-width: 34px; text-align: center; border-radius: 4px; padding: 2px 6px; font-size: 12px; margin-right: 4px; color: #fff; }
+      .b-pass { background: var(--pass); }
+      .b-fail { background: var(--fail); }
+      .b-skip { background: var(--skip); }
+      .b-notrun { background: var(--notrun); }
+      .cases { display: flex; flex-wrap: wrap; gap: 4px; }
+      .dot { width: 16px; height: 16px; border-radius: 3px; display: inline-block; }
+      .dot.passed { background: var(--pass); }
+      .dot.failed { background: var(--fail); }
+      .dot.skipped { background: var(--skip); }
+      .dot.not_run { background: var(--notrun); }
+      .legend { font-size: 12px; color: #555; margin: 8px 0 16px; }
+      .legend .dot { vertical-align: middle; margin: 0 4px 0 12px; }
+      .error { background: #fff3cd; border: 1px solid #ffe69c; padding: 16px; border-radius: 8px; }
+      code { background: #eee; padding: 1px 5px; border-radius: 3px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>TDD 進捗ダッシュボード — 商品在庫管理システム</h1>
+      <div class="meta" id="meta">読み込み中...</div>
+    </header>
+    <main id="app"></main>
+
+    <script>
+      const STATUS_LABEL = { passed: 'PASS', failed: 'FAIL', skipped: 'SKIP', not_run: '未実装' };
+
+      function progressBar(f) {
+        const total = f.total || 1;
+        const w = (n) => `${(n / total) * 100}%`;
+        return `<div class="progress">
+          <span class="b-pass" style="width:${w(f.passed)}"></span>
+          <span class="b-fail" style="width:${w(f.failed)}"></span>
+          <span class="b-skip" style="width:${w(f.skipped)}"></span>
+          <span class="b-notrun" style="width:${w(f.notRun)}"></span>
+        </div>`;
+      }
+
+      function render(data) {
+        document.getElementById('meta').textContent =
+          `生成日時: ${data.generatedAt}  /  全 ${data.summary.total} ケース`;
+
+        const s = data.summary;
+        const cards = [
+          ['合計', s.total, '#1f2937'],
+          ['PASS', s.passed, 'var(--pass)'],
+          ['FAIL', s.failed, 'var(--fail)'],
+          ['SKIP', s.skipped, 'var(--skip)'],
+          ['未実装', s.notRun, '#777'],
+        ].map(([label, value, color]) =>
+          `<div class="card"><div class="label">${label}</div><div class="value" style="color:${color}">${value}</div></div>`
+        ).join('');
+
+        const rows = data.features.map((f) => {
+          const dots = f.cases.map((c) =>
+            `<span class="dot ${c.status}" title="${c.id}: ${STATUS_LABEL[c.status]}"></span>`
+          ).join('');
+          return `<tr>
+            <td class="feature-id">${f.featureId}</td>
+            <td>${f.name}</td>
+            <td style="min-width:160px">${progressBar(f)}</td>
+            <td class="counts">
+              <span class="b-pass">${f.passed}</span>
+              <span class="b-fail">${f.failed}</span>
+              <span class="b-skip">${f.skipped}</span>
+              <span class="b-notrun">${f.notRun}</span>
+            </td>
+            <td><div class="cases">${dots}</div></td>
+          </tr>`;
+        }).join('');
+
+        document.getElementById('app').innerHTML = `
+          <div class="summary">${cards}</div>
+          <div class="legend">
+            凡例:
+            <span class="dot passed"></span>PASS
+            <span class="dot failed"></span>FAIL
+            <span class="dot skipped"></span>SKIP
+            <span class="dot not_run"></span>未実装/未実行
+          </div>
+          <table>
+            <thead><tr><th>機能ID</th><th>機能名</th><th>進捗</th><th>P / F / S / 未</th><th>テストケース</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>`;
+      }
+
+      fetch('./test-results.json', { cache: 'no-store' })
+        .then((r) => { if (!r.ok) throw new Error('not found'); return r.json(); })
+        .then(render)
+        .catch(() => {
+          document.getElementById('meta').textContent = 'test-results.json が見つかりません';
+          document.getElementById('app').innerHTML =
+            `<div class="error">
+              <p><code>dashboard/test-results.json</code> がありません。次のコマンドで生成してください:</p>
+              <pre>bash scripts/aggregate-test-results.sh</pre>
+              <p>ローカル表示は <code>cd dashboard &amp;&amp; python3 -m http.server</code> で起動し、ブラウザで開いてください。</p>
+            </div>`;
+        });
+    </script>
+  </body>
+</html>

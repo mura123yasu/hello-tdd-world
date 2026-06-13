@@ -23,6 +23,7 @@ yarn-error.log*
 # Test results / aggregated reports
 **/surefire-reports/
 **/failsafe-reports/
+**/test-results/
 test-results.json
 coverage/
 
