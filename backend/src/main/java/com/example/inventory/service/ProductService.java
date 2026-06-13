@@ -14,6 +14,7 @@ import com.example.inventory.repository.CategoryRepository;
 import com.example.inventory.repository.ProductRepository;
 import com.example.inventory.repository.ProductSpecification;
 import com.example.inventory.repository.StockRepository;
+import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -117,10 +118,14 @@ public class ProductService {
     @Transactional
     public ProductResponse updateProduct(final int productId, final ProductUpdateRequest request) {
         final Product product = findActiveProduct(productId);
+        // 楽観ロック: クライアントが保持する version が現在の version と一致しない場合は競合とみなす。
+        // （永続化済みエンティティの version は常に非 null。null の場合は検証をスキップする。）
+        final Integer currentVersion = product.getVersion();
+        if (currentVersion != null && !currentVersion.equals(request.version())) {
+            throw new OptimisticLockingFailureException(
+                    "他のユーザーによって更新されています。最新の状態を再取得してください。");
+        }
         final Category category = findCategory(request.categoryId());
-        // クライアントから送られた version をエンティティにセットする。
-        // DB の version と不一致の場合、JPA の @Version 機能が OptimisticLockingFailureException をスローする。
-        product.setVersion(request.version());
         product.update(request.productName(), category, request.unitPrice(),
                 request.status(), request.description());
         final Product saved = productRepository.save(product);
