@@ -18,12 +18,12 @@ public interface StockTransactionRepository extends JpaRepository<StockTransacti
      * @param productId 商品ID
      * @return 入出庫履歴リスト（新しい順）
      */
-    List<StockTransaction> findByProductIdOrderByTransactionAtDesc(Integer productId);
+    List<StockTransaction> findByProduct_ProductIdOrderByTransactionAtDesc(Integer productId);
 
     /**
      * 商品IDの履歴を全件削除する（テスト用）。
      *
      * @param productId 商品ID
      */
-    void deleteByProductId(Integer productId);
+    void deleteByProduct_ProductId(Integer productId);
 }

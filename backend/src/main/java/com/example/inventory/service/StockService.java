@@ -102,7 +102,7 @@ public class StockService {
      * @return 履歴リスト（新しい順）
      */
     public List<StockTransactionResponse> getTransactions(final int productId) {
-        return stockTransactionRepository.findByProductIdOrderByTransactionAtDesc(productId)
+        return stockTransactionRepository.findByProduct_ProductIdOrderByTransactionAtDesc(productId)
                 .stream()
                 .map(StockTransactionResponse::from)
                 .toList();

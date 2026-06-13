@@ -200,7 +200,7 @@ class StockServiceTest {
         final LocalDateTime now = LocalDateTime.now();
         final StockTransaction tx1 = new StockTransaction(product, "IN", 20, null);
         final StockTransaction tx2 = new StockTransaction(product, "OUT", 10, null);
-        when(stockTransactionRepository.findByProductIdOrderByTransactionAtDesc(1))
+        when(stockTransactionRepository.findByProduct_ProductIdOrderByTransactionAtDesc(1))
                 .thenReturn(List.of(tx1, tx2));
 
         final List<StockTransactionResponse> result = stockService.getTransactions(1);
@@ -213,7 +213,7 @@ class StockServiceTest {
     @Test
     @DisplayName("F-10-UT-02 履歴0件は空リスト")
     void F_10_UT_02_履歴0件は空リスト() {
-        when(stockTransactionRepository.findByProductIdOrderByTransactionAtDesc(1))
+        when(stockTransactionRepository.findByProduct_ProductIdOrderByTransactionAtDesc(1))
                 .thenReturn(List.of());
 
         final List<StockTransactionResponse> result = stockService.getTransactions(1);
