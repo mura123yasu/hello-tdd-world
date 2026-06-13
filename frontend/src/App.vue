@@ -5,6 +5,11 @@ import HealthStatus from '@/components/HealthStatus.vue';
 <template>
   <header>
     <h1>商品在庫管理システム</h1>
+    <nav>
+      <RouterLink to="/products">商品一覧</RouterLink>
+      |
+      <RouterLink to="/stock">在庫一覧</RouterLink>
+    </nav>
     <HealthStatus />
   </header>
   <main>
