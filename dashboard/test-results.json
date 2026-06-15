@@ -1,0 +1,494 @@
+{
+  "generatedAt": "2026-06-15T00:02:01.713903+00:00",
+  "summary": {
+    "total": 70,
+    "passed": 48,
+    "failed": 0,
+    "skipped": 0,
+    "notRun": 22
+  },
+  "features": [
+    {
+      "featureId": "F-01",
+      "name": "商品検索",
+      "total": 8,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 2,
+      "cases": [
+        {
+          "id": "F-01-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-01-FE-02",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-01-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-01-IT-02",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-01-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-01-UT-02",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-01-UT-03",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-01-UT-04",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "featureId": "F-02",
+      "name": "商品詳細取得",
+      "total": 5,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 2,
+      "cases": [
+        {
+          "id": "F-02-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-02-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-02-IT-02",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-02-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-02-UT-02",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "featureId": "F-03",
+      "name": "商品登録",
+      "total": 9,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 3,
+      "cases": [
+        {
+          "id": "F-03-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-03-FE-02",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-03-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-03-IT-02",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-03-IT-03",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-03-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-03-UT-02",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-03-UT-03",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-03-UT-04",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "featureId": "F-04",
+      "name": "商品更新",
+      "total": 8,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 2,
+      "cases": [
+        {
+          "id": "F-04-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-04-FE-02",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-04-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-04-IT-02",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-04-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-04-UT-02",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-04-UT-03",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-04-UT-04",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "featureId": "F-05",
+      "name": "商品削除",
+      "total": 6,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 2,
+      "cases": [
+        {
+          "id": "F-05-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-05-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-05-IT-02",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-05-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-05-UT-02",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-05-UT-03",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "featureId": "F-06",
+      "name": "カテゴリ一覧取得",
+      "total": 3,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 1,
+      "cases": [
+        {
+          "id": "F-06-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-06-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-06-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "featureId": "F-07",
+      "name": "在庫照会",
+      "total": 4,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 1,
+      "cases": [
+        {
+          "id": "F-07-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-07-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-07-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-07-UT-02",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "featureId": "F-08",
+      "name": "入庫登録",
+      "total": 5,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 1,
+      "cases": [
+        {
+          "id": "F-08-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-08-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-08-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-08-UT-02",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-08-UT-03",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "featureId": "F-09",
+      "name": "出庫登録",
+      "total": 7,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 2,
+      "cases": [
+        {
+          "id": "F-09-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-09-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-09-IT-02",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-09-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-09-UT-02",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-09-UT-03",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-09-UT-04",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "featureId": "F-10",
+      "name": "入出庫履歴照会",
+      "total": 4,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 1,
+      "cases": [
+        {
+          "id": "F-10-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "F-10-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "F-10-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "F-10-UT-02",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "featureId": "E2E",
+      "name": "E2E シナリオ",
+      "total": 4,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 4,
+      "cases": [
+        {
+          "id": "E2E-01",
+          "layer": "E2E",
+          "status": "not_run"
+        },
+        {
+          "id": "E2E-02",
+          "layer": "E2E",
+          "status": "not_run"
+        },
+        {
+          "id": "E2E-03",
+          "layer": "E2E",
+          "status": "not_run"
+        },
+        {
+          "id": "E2E-04",
+          "layer": "E2E",
+          "status": "not_run"
+        }
+      ]
+    },
+    {
+      "featureId": "SKELETON",
+      "name": "基盤スケルトン（疎通・共通処理）",
+      "total": 7,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "notRun": 1,
+      "cases": [
+        {
+          "id": "SKELETON-FE-01",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "SKELETON-FE-02",
+          "layer": "FE",
+          "status": "passed"
+        },
+        {
+          "id": "SKELETON-IT-01",
+          "layer": "IT",
+          "status": "not_run"
+        },
+        {
+          "id": "SKELETON-UT-01",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "SKELETON-UT-02",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "SKELETON-UT-03",
+          "layer": "UT",
+          "status": "passed"
+        },
+        {
+          "id": "SKELETON-UT-04",
+          "layer": "UT",
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

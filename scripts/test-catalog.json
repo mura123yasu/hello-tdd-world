@@ -1,0 +1,65 @@
+{
+  "description": "ダッシュボードの分母となるテストケース台帳。docs/application-spec.md の機能一覧・テストケース設計と対応する。新しいテストケースを追加したらここにも追記する（決定論的な集計のため）。",
+  "features": [
+    {
+      "featureId": "F-01",
+      "name": "商品検索",
+      "cases": ["F-01-UT-01", "F-01-UT-02", "F-01-UT-03", "F-01-UT-04", "F-01-IT-01", "F-01-IT-02", "F-01-FE-01", "F-01-FE-02"]
+    },
+    {
+      "featureId": "F-02",
+      "name": "商品詳細取得",
+      "cases": ["F-02-UT-01", "F-02-UT-02", "F-02-IT-01", "F-02-IT-02", "F-02-FE-01"]
+    },
+    {
+      "featureId": "F-03",
+      "name": "商品登録",
+      "cases": ["F-03-UT-01", "F-03-UT-02", "F-03-UT-03", "F-03-UT-04", "F-03-IT-01", "F-03-IT-02", "F-03-IT-03", "F-03-FE-01", "F-03-FE-02"]
+    },
+    {
+      "featureId": "F-04",
+      "name": "商品更新",
+      "cases": ["F-04-UT-01", "F-04-UT-02", "F-04-UT-03", "F-04-UT-04", "F-04-IT-01", "F-04-IT-02", "F-04-FE-01", "F-04-FE-02"]
+    },
+    {
+      "featureId": "F-05",
+      "name": "商品削除",
+      "cases": ["F-05-UT-01", "F-05-UT-02", "F-05-UT-03", "F-05-IT-01", "F-05-IT-02", "F-05-FE-01"]
+    },
+    {
+      "featureId": "F-06",
+      "name": "カテゴリ一覧取得",
+      "cases": ["F-06-UT-01", "F-06-IT-01", "F-06-FE-01"]
+    },
+    {
+      "featureId": "F-07",
+      "name": "在庫照会",
+      "cases": ["F-07-UT-01", "F-07-UT-02", "F-07-IT-01", "F-07-FE-01"]
+    },
+    {
+      "featureId": "F-08",
+      "name": "入庫登録",
+      "cases": ["F-08-UT-01", "F-08-UT-02", "F-08-UT-03", "F-08-IT-01", "F-08-FE-01"]
+    },
+    {
+      "featureId": "F-09",
+      "name": "出庫登録",
+      "cases": ["F-09-UT-01", "F-09-UT-02", "F-09-UT-03", "F-09-UT-04", "F-09-IT-01", "F-09-IT-02", "F-09-FE-01"]
+    },
+    {
+      "featureId": "F-10",
+      "name": "入出庫履歴照会",
+      "cases": ["F-10-UT-01", "F-10-UT-02", "F-10-IT-01", "F-10-FE-01"]
+    },
+    {
+      "featureId": "E2E",
+      "name": "E2E シナリオ",
+      "cases": ["E2E-01", "E2E-02", "E2E-03", "E2E-04"]
+    },
+    {
+      "featureId": "SKELETON",
+      "name": "基盤スケルトン（疎通・共通処理）",
+      "cases": ["SKELETON-UT-01", "SKELETON-UT-02", "SKELETON-UT-03", "SKELETON-UT-04", "SKELETON-IT-01", "SKELETON-FE-01", "SKELETON-FE-02"]
+    }
+  ]
+}

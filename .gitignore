@@ -23,7 +23,10 @@ yarn-error.log*
 # Test results / aggregated reports
 **/surefire-reports/
 **/failsafe-reports/
+**/test-results/
 test-results.json
+# ただしダッシュボード入力のスナップショットは追跡する
+!dashboard/test-results.json
 coverage/
 
 # IDE
